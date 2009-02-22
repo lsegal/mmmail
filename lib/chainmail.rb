@@ -51,7 +51,6 @@ module CMail
       bin, err = config.sendmail_binary, ''
       result = IO.popen("#{bin} -t 2>&1", "w+") do |io|
         io.write(message.to_s)
-        io.write(".\n")
         io.close_write
         err = io.read.chomp
       end
