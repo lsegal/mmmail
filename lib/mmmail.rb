@@ -1,6 +1,6 @@
 require 'net/smtp'
 
-module MMMail
+module MmMail
   class SendMailError < Exception; end
   
   class Transport
