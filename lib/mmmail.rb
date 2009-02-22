@@ -34,7 +34,7 @@ module MmMail
     
     def mail(message)
       unless Message === message
-        raise ArgumentError, "expected CMail::Message, got #{message.class}"
+        raise ArgumentError, "expected MmMail::Message, got #{message.class}"
       end
       
       send("mail_#{config.method}", message)
