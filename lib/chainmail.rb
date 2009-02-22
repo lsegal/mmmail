@@ -82,7 +82,7 @@ module CMail
     end
     
     def to_s
-      "#{headers}\n#{body}\n"
+      [headers, body].join("\n")
     end
     
     def recipients_list
