@@ -10,7 +10,7 @@
 	<style type="text/css">
 		body {
   		margin-top: 1.0em;
-  		background-color: #cc43cc;
+  		background-color: #d3ff3d;
 		  font-family: "helvetica"; 
   		color: #000000;
     }
@@ -47,29 +47,77 @@
       
     <h1><a href="http://github.com/lsegal/mmmail">mmmail</a> 
       <span class="small">by <a href="http://github.com/lsegal">lsegal</a></small></h1>
-
-    <div class="description">
-      Mmm, a Minimalist mail library for Ruby. Works with SMTP or sendmail. Provides a one-call method for simple one-off emailing.
-    </div>
-
-    <p>Mmmm, a Minimalist mail library for Ruby. Works with SMTP or sendmail. One method call to send out emails. You're done. Easy tastes good. Oh, and it works with Ruby 1.9.
-
-Join the discussion: #mmmail on freenode</p><h2>Dependencies</h2>
-<p>None.</p>
+    <p>Mmmm, a Minimalist mail library for Ruby. Works with SMTP or sendmail. One method call to send out emails. 
+      You're done. Easy tastes good. Oh, and it works with Ruby 1.9.</p>
+    <p>Join the discussion: #mmmail on freenode</p>
 <h2>Install</h2>
-<p>    $ git clone git://github.com/lsegal/mmmail
-    $ cd mmmail
-    $ rake install
+<pre>$ git clone git://github.com/lsegal/mmmail
+$ cd mmmail
+$ rake install</pre>
 
-or use GitHub gems:
+<p>or use GitHub gems:</p>
 
-    $ sudo gem install lsegal-mmmail --source http://gems.github.com</p>
+<pre>$ sudo gem install lsegal-mmmail --source http://gems.github.com</pre>
+
+<h2>Use</h2>
+
+<p>An easy example:</p>
+
+<pre>require 'mmmail'
+MmMail.send(to: 'me@gmail.com', from: 'me@yahoo.com', 
+            subject: 'hello joe', body: &lt;&lt;-eof)
+  Hey Joe,
+
+  You left the kitchen light on.
+  It started a fire and burned down your house.
+  Have fun in Hawaii.
+
+  Jake.
+eof</pre>
+
+<p>Yes, that's Ruby 1.9 syntax, get used to it. It should work out with the inferior 1.8 hash syntax too.</p>
+
+<h4>More complex stuff, like using sendmail instead of <tt>Net::SMTP</tt>:</h4>
+
+<pre>require 'mmmail'
+MmMail::Transport::DefaultConfig.method = :sendmail
+MmMail.send(...)</pre>
+
+<p>Okay it wasn't that hard. You can also specify the path to sendmail with</p>
+
+<pre>MmMail::Transport::DefaultConfig.sendmail_binary = '/bin/sendmail'</pre>
+
+<h4>Dealing with SMTP auth and separate hosts:</h4>
+
+<p>My ISP makes me do this:</p>
+
+<pre>require 'mmmail'
+config = MmMail::Transport::DefaultConfig
+config.host = 'smtp.myisp.com'
+config.port = 587
+config.auth_type = :plain # or :md5cram or :login
+config.auth_user = 'myuser'
+config.auth_pass = 'mypass'</pre>
+
+<p>Yours might too. Okay, it doesn't make me do all of that, but these are just examples, right?</p>
+
+<p>You can also create a <tt>MmMail::Transport::Config</tt> object to pass to <tt>#mail</tt> if you need multiple configurations:</p>
+
+<pre>config = MmMail::Transport::Config.new
+config.host = 'mail.someOtherIspHost.com'
+
+MmMail.send({...}, config)
+# or 
+msg = MmMail::Message.new(to: ..., from: ..., subject: ..., body: ...)
+transport = MmMail::Transport.new(config)
+transport.send(msg, config)</pre>
+
+
 <h2>License</h2>
 <p>MIT License</p>
-<h2>Authors</h2>
-<p>Loren Segal (lsegal@soen.ca)<br/><br/>      </p>
 <h2>Contact</h2>
-<p>Loren Segal (lsegal@soen.ca)<br/>      </p>
+<p>Loren Segal (lsegal@soen.ca)
+<br/>      </p>
 
 
     <h2>Download</h2>
