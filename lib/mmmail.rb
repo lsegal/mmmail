@@ -69,6 +69,7 @@ module MmMail
     def initialize(opts = {})
       defaults = {
         :from => 'nobody@localhost',
+        :subject => '',
         :body => ''
       }
       @headers = defaults.merge(opts)
