@@ -78,5 +78,4 @@ if you need multiple configurations:
 Documentation
 -------------
 
-Seriously, I'll do it, but the code is only 100 lines long, so you could really
-just look at it. Really.
+[http://lsegal.github.com/mmmail/docs]()
