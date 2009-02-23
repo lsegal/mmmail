@@ -1,7 +1,7 @@
 require 'net/smtp'
 
 module MmMail
-  class SendMailError < Exception; end
+  class TransportError < Exception; end
   
   class Transport
     class Config
@@ -41,6 +41,8 @@ module MmMail
         raise ArgumentError, "expected MmMail::Message, got #{message.class}"
       end
       
+      raise TransportError, "invalid message" unless message.valid?
+      
       send("mail_#{config.method}", message)
     end
     
@@ -59,7 +61,7 @@ module MmMail
         err = io.read.chomp
       end
       
-      raise SendMailError, err if $? != 0
+      raise TransportError, err if $? != 0
     end
   end
 
