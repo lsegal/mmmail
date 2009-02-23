@@ -182,6 +182,7 @@ describe MmMail::Transport, '#mail' do
     lambda { MmMail::Transport.new(conf).mail(m) }.should raise_error
   end
   
+  # Fails in rake specs? works from TextMate
   it "should fail if the sendmail binary is invalid" do
     conf = MmMail::Transport::Config.new
     conf.method = :sendmail
