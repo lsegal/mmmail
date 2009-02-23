@@ -127,7 +127,8 @@ end
 describe MmMail::Transport, '.mail' do
   it "should create a Transport object and call #mail" do
     Net::SMTP.should_receive(:start)
-    MmMail::Transport.mail(MmMail::Message.new(:to => 'test@test.com', :subject => 'hi'))
+    m = MmMail::Message.new(:to => 'test@test.com', :subject => 'hi')
+    MmMail::Transport.mail(m)
   end
 end
 
@@ -140,5 +141,52 @@ describe MmMail::Transport, '#initialize' do
     conf = MmMail::Transport::Config.new
     transport = MmMail::Transport.new(conf)
     transport.config.should == conf
+  end
+end
+
+describe MmMail::Transport, '#mail' do
+  it "should raise ArgumentError if argument is not a message" do
+    lambda { MmMail::Transport.new.mail(:sym) }.should raise_error(ArgumentError)
+  end
+  
+  it "should raise TransportError if message is invalid" do
+    invalid_m = MmMail::Message.new
+    lambda { MmMail::Transport.new.mail(invalid_m) }.should raise_error(MmMail::TransportError)
+  end
+  
+  it "should pass to Net::SMTP if method is set to :smtp" do
+    Net::SMTP.should_receive(:start).with('localhost', 25, 'localhost.localdomain', nil, nil, nil)
+    m = MmMail::Message.new(:to => 'test@test.com', :subject => 'hi')
+    MmMail::Transport.new.mail(m)
+  end
+  
+  it "should pass changed config values to Net::SMTP" do
+    conf = MmMail::Transport::Config.new
+    conf.auth_type = :plain
+    conf.auth_user = 'foo'
+    conf.auth_pass = 'bar'
+    conf.host = 'foo.bar'
+    conf.port = 587
+    Net::SMTP.should_receive(:start).with(conf.host, conf.port, 
+      'localhost.localdomain', conf.auth_user, conf.auth_pass, conf.auth_type)
+    m = MmMail::Message.new(:to => 'test@test.com', :subject => 'hi')
+    MmMail::Transport.new(conf).mail(m)
+  end
+
+  it "should pass to sendmail if method is set to :sendmail" do
+    conf = MmMail::Transport::Config.new
+    conf.method = :sendmail
+    conf.sendmail_binary = '/path/to/sendmail'
+    IO.should_receive(:popen).with('/path/to/sendmail -t 2>&1', 'w+')
+    m = MmMail::Message.new(:to => 'test@test.com', :subject => 'hi')
+    lambda { MmMail::Transport.new(conf).mail(m) }.should raise_error
+  end
+  
+  it "should fail if the sendmail binary is invalid" do
+    conf = MmMail::Transport::Config.new
+    conf.method = :sendmail
+    conf.sendmail_binary = '/FAIL'
+    m = MmMail::Message.new(:to => 'test@test.com', :subject => 'hi')
+    lambda { MmMail::Transport.new(conf).mail(m) }.should raise_error(MmMail::TransportError)
   end
 end
