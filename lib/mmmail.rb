@@ -73,7 +73,7 @@ module MmMail
     
     def method_missing(sym, *args)
       if sym.to_s =~ /=$/
-        self[sym.to_s[0..-2].to_sym] = *args
+        self[sym.to_s[0..-2].to_sym] = args.first
       elsif @headers.has_key?(sym)
         self[sym]
       else
