@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../../style.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="../../syntax_highlight.css" type="text/css" charset="utf-8" />
+
+    <script src="../../jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../app.js" type="text/javascript" charset="utf-8"></script>
+    <title>Class: MmMail::Transport::Config</title>
+  </head>
+  <body>
+    <div id="content">
+      <div class="section class MmMail_Transport_Config">
+  <h1 class="title">Class: MmMail::Transport::Config</h1>
+  <div class="section docstring">
+  <p>
+Configuration class for a <tt><a href="../Transport.html" title="Transport">Transport</a></tt>
+</p>
+
+</div><div class="section attributes">
+  <h1>Attributes</h1>
+
+  
+    <div class="instance">
+      <h2>Instance Attributes</h2>
+      <table>
+      
+        <tr>
+          <th class="name">auth_pass</td>
+          <td class="readwrite">
+            [<span id='auth_pass-instance_method'>R</span><span id='auth_pass%3D-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Set/get the AUTH user/password when using SMTP transport.
+</p>
+
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <th class="name">auth_type</td>
+          <td class="readwrite">
+            [<span id='auth_type-instance_method'>R</span><span id='auth_type%3D-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Set/get the authentication type (nil for none, :plain, :login or
+:cram_md5).
+</p>
+
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <th class="name">auth_user</td>
+          <td class="readwrite">
+            [<span id='auth_user-instance_method'>R</span><span id='auth_user%3D-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Set/get the AUTH user/password when using SMTP transport.
+</p>
+
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <th class="name">host</td>
+          <td class="readwrite">
+            [<span id='host-instance_method'>R</span><span id='host%3D-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Set/get the SMTP host/port information.
+</p>
+
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <th class="name">method</td>
+          <td class="readwrite">
+            [<span id='method-instance_method'>R</span><span id='method%3D-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Set/get the email method.
+</p>
+
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <th class="name">port</td>
+          <td class="readwrite">
+            [<span id='port-instance_method'>R</span><span id='port%3D-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Set/get the SMTP host/port information.
+</p>
+
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <th class="name">sendmail_binary</td>
+          <td class="readwrite">
+            [<span id='sendmail_binary-instance_method'>R</span><span id='sendmail_binary%3D-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Set/get the location of the sendmail binary on the system.
+</p>
+
+            
+          </td>
+        </tr>
+      
+      </table>
+    </div>
+  
+</div><div class="section constants">
+  
+</div><div class="section constructor">
+<h1>Constructor Summary</h1>
+  <div id="initialize-instance_method" class="section method">
+  <div class="details_title">
+  <div class='section methodsignature'>
+  <tt class='def'>
+    <span class='visibility'>public</span>
+    <span class='return_types'></span>
+    <span class='name'>initialize</span><span class='args'></span>
+    <span class='block'></span>
+  </tt>
+</div>
+
+</div><div class="section docstring">
+  <p>
+Creates a new Config object set to send via SMTP on localhost:25 with no
+authentication.
+</p>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49
+50
+51
+52</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 44</span>
+
+<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span>
+  <span class='@method ivar id'>@method</span> <span class='assign token'>=</span> <span class='symbol val'>:smtp</span> <span class='comment val'># :sendmail</span>
+  <span class='@host ivar id'>@host</span> <span class='assign token'>=</span> <span class='string val'>'localhost'</span>
+  <span class='@port ivar id'>@port</span> <span class='assign token'>=</span> <span class='integer val'>25</span>
+  <span class='@auth_type ivar id'>@auth_type</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span> <span class='comment val'># :plain, :login, :cram_md5</span>
+  <span class='@auth_user ivar id'>@auth_user</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span>
+  <span class='@auth_pass ivar id'>@auth_pass</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span>
+  <span class='@sendmail_binary ivar id'>@sendmail_binary</span> <span class='assign token'>=</span> <span class='string val'>'sendmail'</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+  </body>
+</html>
