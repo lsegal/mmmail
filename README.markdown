@@ -78,4 +78,4 @@ if you need multiple configurations:
 Documentation
 -------------
 
-[http://lsegal.github.com/mmmail/docs](http://lsegal.github.com/mmmail/docs)
+[http://lsegal.github.com/mmmail/doc](http://lsegal.github.com/mmmail/doc)
