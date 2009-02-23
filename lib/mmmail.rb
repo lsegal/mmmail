@@ -29,6 +29,10 @@ module MmMail
     attr_accessor :config
     
     def initialize(config = nil)
+      if config && !config.is_a?(Config)
+        raise ArgumentError, "expected #{self.class}::Config"
+      end
+      
       @config = config || DefaultConfig
     end
     
@@ -81,12 +85,30 @@ module MmMail
       end
     end
     
+    def respond_to?(sym)
+      return true if super
+      @headers.has_key?(sym)
+    end
+    
     def to_s
       [headers, body].join("\n")
     end
     
     def recipients_list
       to.split(/\s*,\s*/)
+    end
+    
+    # Checks if the message is valid. Validity is based on
+    # having the From, To and Subject fields set. From and To
+    # must not be empty.
+    # 
+    # @return [Boolean] whether or not the message is a valid e-mail
+    def valid?
+      [:from, :to].each do |field|
+        return false if !self[field] || self[field].empty?
+      end
+      
+      self[:subject] ? true : false
     end
     
     private
