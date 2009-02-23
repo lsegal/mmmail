@@ -7,7 +7,7 @@ SPEC = Gem::Specification.new do |s|
   s.homepage = "http://github.com/lsegal/mmmail"
   s.platform = Gem::Platform::RUBY
   s.summary = "Mmmm, a Minimalist mail library for Ruby. Works with SMTP or sendmail."
-  s.files = Dir.glob("{lib}/**/*") + ['LICENSE', 'README', 'Rakefile']
+  s.files = Dir.glob("{lib,spec}/**/*") + ['LICENSE', 'README.markdown', 'Rakefile']
   s.require_paths = ['lib']
   s.has_rdoc = false
 end
