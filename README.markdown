@@ -69,9 +69,9 @@ if you need multiple configurations:
     config = MmMail::Transport::Config.new
     config.host = 'mail.someOtherIspHost.com'
     
-    MmMail.send({...}, config)
+    MmMail.send({options: here}, config)
     # or 
-    msg = MmMail::Message.new(to: ..., from: ..., subject: ..., body: ...)
+    msg = MmMail::Message.new(to: '...', from: '...', subject: '...', body: '...')
     transport = MmMail::Transport.new(config)
     transport.send(msg, config)
     
