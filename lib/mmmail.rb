@@ -84,7 +84,7 @@ module MmMail
     # Sends a {Message} object out as an email using the configuration
     # set during initialization.
     # 
-    # @param [Message] an email to send
+    # @param [Message] message an email to send
     # @raise [ArgumentError] if message is not a {Message} object
     # @raise [TransportError] if message is not {Message#valid? valid}.
     def mail(message)
