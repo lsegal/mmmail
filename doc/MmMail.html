@@ -2,132 +2,174 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
-<link rel="stylesheet" href="syntax_highlight.css" type="text/css" charset="utf-8" />
-
-    <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
-    <script src="app.js" type="text/javascript" charset="utf-8"></script>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
     <title>Module: MmMail</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/autocomplete.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
   </head>
   <body>
-    <div id="content">
-      <div class="section module MmMail">
-  <h1 class="title">Module: MmMail</h1>
-  <div class="section constants">
+    <div id="header">
+      <div id="menu">
   
-</div>  <div class="section visibilitygroup public">
-    <h1>Public Visibility</h1>
-      <div class="section methodsummary class public">
-    <h1>Public Class Method Summary</h1>
-<table class="summary">
+    <a href="glossary.html">Glossary (M)</a> :: 
+    
+    
+    MmMail
   
-    <tr>
-      <th class="signature">
-        <span class='name'><a href="#mail-class_method" title="mail">mail</a></span><span class='args'>(opts = )</span>
-        <span class='block'></span>
-        
-      </th>
-      <td class="docstring">
-        <p>
-Quickly send out an email.
-</p>
-
-        
-      </td>
-    </tr>
-  
-</table>
-  </div>
-<div class="section methoddetails class public">
-  <h1>Public Class Method Details</h1>
-  
-    <div class="method">
-      <div class="method_header">
-  <h3>mail</h3>
-</div><div id="mail-class_method" class="section method">
-  <div class="details_title">
-  <div class='section methodsignature'>
-  <tt class='def'>
-    <span class='visibility'>public</span>
-    <span class='return_types'></span>
-    <span class='name'>mail</span><span class='args'>(opts = )</span>
-    <span class='block'></span>
-  </tt>
 </div>
 
-</div><div class="section docstring">
-  <p>
-Quickly send out an email.
-</p>
-
-</div><div class="section tags">
-  <h2>Meta Tags</h2>
-  <div class="param">
-  <h3>Parameters:</h3>
-  <dl>
+      <div id="search">
+        <a id="class_list_link" href="#">Namespace List</a> |
+        <a id="method_list_link" href="#">Method List</a> |
+        <a id ="file_list_link" href="#">File List</a>
+      </div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: MmMail</h1>
+<dl class="box">
+  
   
     
-      <dt>
-        <span class='type'>[<tt>Hash</tt>]</span>
-        <span class='name'>opts</span>
-        
-          <em class="default">(defaults to: <tt></tt>)</em>
-        
-      </dt>
-      <dd>
-        <span class='desc'><p>
-the hash used to construct the message
+  
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/mmmail.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+   
+    
+      <strong class="classes">Classes:</strong> <a href="MmMail/TransportError.html" title="TransportError">TransportError</a>, <a href="MmMail/Transport.html" title="Transport">Transport</a>, <a href="MmMail/Message.html" title="Message">Message</a>
+    
+  
 </p>
+  <h2>Method Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+        <a href="#mail-class_method" title="+ (Object) mail(opts = {}, config = nil) ">+ (Object) mail(opts = {}, config = nil) </a>
+        
+        
+        
+          <span class="summary_desc">
+Quickly send out an email.
+
 </span>
-      </dd>
+        
+      </li>
     
+  </ul>
+  <div id="method_details">
+    <h2>Method Details</h2>
+    
+      <div class="method_details">
+  <p class="signature first" id="mail-class_method">
   
-  </dl>
-</div><div class="see">
-  <h3>See Also:</h3>
-  <dl>
-    <dt></dt>
-    <dd>
-      <span class='desc'>
-        <tt><a href="MmMail/Transport.html#mail-instance_method" title="Transport#mail">Transport#mail</a></tt>
-      </span>
-    </dd>
-  </dl>
-</div>
+    + (Object) mail(opts = {}, config = nil) 
+  
 
-</div><div class="section source">
-  <span>[<a class="source_link" href="#">View source</a>]</span>
-  <div class="source_code">
-    <table>
-      <tr>
-        <td>
-          <pre class="lines">
+  
+</p><div class="docstring">
+  <div class="discussion">
+      <p>
+Quickly send out an email.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+    
+    
+    <h3>Example :</h3>
+    <pre class="example code">  <span class='const'>MmMail</span><span class='period'>.</span><span class='id mail'>mail</span><span class='lparen'>(</span><span class='symbol'>:to</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>me@gmail.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hi!</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre>
+  
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>opts</span>
+      
+      
+      
+        &mdash;
+        
+the hash used to construct the message
+
+
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt><a href="MmMail/Transport/Config.html" title="Transport::Config">Transport::Config</a></tt>, <tt>nil</tt>)</span>
+      
+      
+        <span class='name'>config</span>
+      
+      
+      
+        &mdash;
+        
+the configuration object to use during transport
+
+
+      
+    </li>
+  
+</ul>
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><a href="MmMail/Transport.html#mail-instance_method" title="Transport#mail">Transport#mail</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
 
 280
 281
 282</pre>
-        </td>
-        <td>
-          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 280</span>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 280</span>
 
-<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='mail identifier id'>mail</span><span class='lparen token'>(</span><span class='opts identifier id'>opts</span> <span class='assign token'>=</span> <span class='semicolon token'>;</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='config identifier id'>config</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
-  <span class='Transport constant id'>Transport</span><span class='dot token'>.</span><span class='mail identifier id'>mail</span><span class='lparen token'>(</span><span class='Message constant id'>Message</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='opts identifier id'>opts</span><span class='rparen token'>)</span><span class='comma token'>,</span> <span class='config identifier id'>config</span><span class='rparen token'>)</span>
-<span class='end end kw'>end</span>
-</pre>
-        </td>
-      </tr>
-    </table>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id mail'>mail</span><span class='lparen'>(</span><span class='id opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id config'>config</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='const'>Transport</span><span class='period'>.</span><span class='id mail'>mail</span><span class='lparen'>(</span><span class='const'>Message</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id opts'>opts</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id config'>config</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 </div>
-</div>
-    </div>
-  
-</div>
-  </div>
-
-</div>
-    </div>
+    
+    <div id="footer">Powered by yard 0.2.3.5 (ruby-1.9.1)</div>
   </body>
 </html>
