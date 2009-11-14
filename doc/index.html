@@ -1,123 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html>
   <head>
-    <meta name="Content-Type" content="text/html; charset=UTF-8" />
-    <title></title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
-    
-    <script type="text/javascript" charset="utf-8">
-      relpath = '';
-      if (relpath != '') relpath += '/';
-    </script>
-    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/autocomplete.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>YARD Documentation</title>
   </head>
-  <body>
-    <div id="header">
-      <div id="menu">
-  
-    <a href="glossary.html" title="Glossary">Glossary</a> :: 
-    File: README
-  
-</div>
-
-      <div id="search">
-        <a id="class_list_link" href="#">Namespace List</a> |
-        <a id="method_list_link" href="#">Method List</a> |
-        <a id ="file_list_link" href="#">File List</a>
-      </div>
-      <div class="clear"></div>
-    </div>
-    
-    <iframe id="search_frame"></iframe>
-    
-    <div id="content"><div id='filecontents'><h1>MmMail</h1>
-
-<p>Mmmm, a Minimalist mail library for Ruby. Works with SMTP or sendmail.
-One method call to send out emails. You're done. Easy tastes good. Oh,
-and it works with Ruby 1.9.</p>
-
-<p>Join the discussion: #mmmail on freenode</p>
-
-<h2>Install</h2>
-
-<pre class="code">$ git clone git://github.com/lsegal/mmmail
-$ cd mmmail
-$ rake install
-</pre>
-
-<p>or use GitHub gems:</p>
-
-<pre class="code">$ sudo gem install lsegal-mmmail --source http://gems.github.com
-</pre>
-
-<h2>Use</h2>
-
-<p><strong>An easy example</strong>:</p>
-
-<pre class="code"><span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>mmmail</span><span class='tstring_end'>'</span></span>
-<span class='const'>MmMail</span><span class='period'>.</span><span class='id send'>send</span><span class='lparen'>(</span><span class='label'>to:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>me@gmail.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='label'>from:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>me@yahoo.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> 
-            <span class='label'>subject:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hello joe</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='label'>body:</span> <span class='heredoc_beg'>&lt;&lt;-eof</span><span class='tstring_content'>  Hey Joe,
-
-  You left the kitchen light on.
-  It started a fire and burned down your house.
-  Have fun in Hawaii.
-
-  Jake.
-</span><span class='heredoc_end'>eof
-</span><span class='rparen'>)</span>
-</pre>
-
-<p>Yes, that's Ruby 1.9 syntax, get used to it. It should work out
-with the inferior 1.8 hash syntax too.</p>
-
-<p><strong>More complex stuff, like using sendmail instead of Net::SMTP:</strong></p>
-
-<pre class="code">require 'mmmail'
-MmMail::Transport::DefaultConfig.method = :sendmail
-MmMail.send(...)
-</pre>
-
-<p>Okay it wasn't that hard. You can also specify the path to sendmail with</p>
-
-<pre class="code"><span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Transport</span><span class='op'>::</span><span class='const'>DefaultConfig</span><span class='period'>.</span><span class='id sendmail_binary'>sendmail_binary</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/bin/sendmail</span><span class='tstring_end'>'</span></span>
-</pre>
-
-<p><strong>Dealing with SMTP auth and separate hosts:</strong></p>
-
-<p>My ISP makes me do this:</p>
-
-<pre class="code"><span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>mmmail</span><span class='tstring_end'>'</span></span>
-<span class='id config'>config</span> <span class='op'>=</span> <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Transport</span><span class='op'>::</span><span class='const'>DefaultConfig</span>
-<span class='id config'>config</span><span class='period'>.</span><span class='id host'>host</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>smtp.myisp.com</span><span class='tstring_end'>'</span></span>
-<span class='id config'>config</span><span class='period'>.</span><span class='id port'>port</span> <span class='op'>=</span> <span class='int'>587</span>
-<span class='id config'>config</span><span class='period'>.</span><span class='id auth_type'>auth_type</span> <span class='op'>=</span> <span class='symbol'>:plain</span> <span class='comment'># or :md5cram or :login
-</span><span class='id config'>config</span><span class='period'>.</span><span class='id auth_user'>auth_user</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>myuser</span><span class='tstring_end'>'</span></span>
-<span class='id config'>config</span><span class='period'>.</span><span class='id auth_pass'>auth_pass</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>mypass</span><span class='tstring_end'>'</span></span>
-</pre>
-
-<p>Yours might too. Okay, it doesn't make me do <em>all</em> of that, but these are
-just examples, right?</p>
-
-<p>You can also create a <code>MmMail::Transport::Config</code> object to pass to <code>#mail</code>
-if you need multiple configurations:</p>
-
-<pre class="code"><span class='id config'>config</span> <span class='op'>=</span> <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Transport</span><span class='op'>::</span><span class='const'>Config</span><span class='period'>.</span><span class='id new'>new</span>
-<span class='id config'>config</span><span class='period'>.</span><span class='id host'>host</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>mail.someOtherIspHost.com</span><span class='tstring_end'>'</span></span>
-
-<span class='const'>MmMail</span><span class='period'>.</span><span class='id send'>send</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='label'>options:</span> <span class='id here'>here</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id config'>config</span><span class='rparen'>)</span>
-<span class='comment'># or 
-</span><span class='id msg'>msg</span> <span class='op'>=</span> <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Message</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='label'>to:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>...</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='label'>from:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>...</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='label'>subject:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>...</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='label'>body:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>...</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-<span class='id transport'>transport</span> <span class='op'>=</span> <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Transport</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id config'>config</span><span class='rparen'>)</span>
-<span class='id transport'>transport</span><span class='period'>.</span><span class='id send'>send</span><span class='lparen'>(</span><span class='id msg'>msg</span><span class='comma'>,</span> <span class='id config'>config</span><span class='rparen'>)</span>
-</pre>
-
-<h2>Documentation</h2>
-
-<p><a href="http://lsegal.github.com/mmmail/doc">http://lsegal.github.com/mmmail/doc</a></p></div></div>
-    
-    <div id="footer">Powered by yard 0.2.3.5 (ruby-1.9.1)</div>
-  </body>
+  <frameset cols="20%,*">
+    <frameset rows="13%,45%,42%">
+      <frame src="all-files.html" />
+      <frame src="all-namespaces.html" />
+      <frame src="all-methods.html" />
+    </frameset>
+    <frame name="main" src="README.markdown.html" />
+    <noframes>
+      <p><a href="README.markdown.html">Click here to go to the title page</a>.</p>
+    </noframes>
+  </frameset>
 </html>

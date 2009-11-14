@@ -2,292 +2,142 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../style.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="../custom.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="../syntax_highlight.css" type="text/css" charset="utf-8" />
+
+    <script src="../jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../app.js" type="text/javascript" charset="utf-8"></script>
     <title>Class: MmMail::Message</title>
-    <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
-    
-    <script type="text/javascript" charset="utf-8">
-      relpath = '..';
-      if (relpath != '') relpath += '/';
-    </script>
-    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../js/autocomplete.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
   </head>
   <body>
-    <div id="header">
-      <div id="menu">
-  
-    <a href="../glossary.html">Glossary (M)</a> :: 
-    <a href="../MmMail.html" title="MmMail">MmMail</a>
-     :: 
-    Message
-  
-</div>
-
-      <div id="search">
-        <a id="class_list_link" href="#">Namespace List</a> |
-        <a id="method_list_link" href="#">Method List</a> |
-        <a id ="file_list_link" href="#">File List</a>
-      </div>
-      <div class="clear"></div>
-    </div>
-    
-    <iframe id="search_frame"></iframe>
-    
-    <div id="content"><h1>Class: MmMail::Message</h1>
-<dl class="box">
-  
-    <dt class="r1">Inherits:</dt>
-    <dd class="r1">
-      <span class="inheritName">Object</span>
-      
-      </dd>
-    
-  
-  
-    
-  
-    
-  
-  
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/mmmail.rb</dd>
-  
-</dl>
-<div class="clear"></div>
-
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-      <p>
+    <div id="content">
+      <div class="section class MmMail_Message">
+  <h1 class="title">Class: MmMail::Message</h1>
+  <div class="section docstring">
+  <p>
 A Message object representing an Email to be passed to a <tt><a href="Transport.html" title="Transport">Transport</a></tt>.
 </p>
 
-
+</div><div class="section constants">
+  
+</div><div class="section constructor">
+<h1>Constructor Summary</h1>
+  <div id="initialize-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>initialize</span><span class='args'>(opts = {})</span>
+      <span class='block'></span>
+    </tt>
   </div>
-</div>
-<div class="tags">
-  
-</div>  <h2>Method Summary</h2>
-  <ul class="summary">
-    
-      <li class="public ">
-        <a href="#%5B%5D-instance_method" title="- (String) [](k) ">- (String) [](k) </a>
-        
-        
-        
-          <span class="summary_desc">
-Allow access of fields by header name or symbolic representation.
 
-</span>
-        
-      </li>
-    
-      <li class="public ">
-        <a href="#%5B%5D%3D-instance_method" title="- (Object) []=(k, v) ">- (Object) []=(k, v) </a>
-        
-        
-        
-          <span class="summary_desc">
-Allow access of fields by header name or symbolic representation.
-
-</span>
-        
-      </li>
-    
-      <li class="public ">
-        <a href="#initialize-instance_method" title="- (Object) initialize(opts = {}) ">- (Object) initialize(opts = {}) </a>
-        
-        
-        
-          <span class="summary_desc">
-Creates a new message with associated fields.
-
-</span>
-        
-      </li>
-    
-      <li class="public ">
-        <a href="#method_missing-instance_method" title="- (Object) method_missing(sym, *args) ">- (Object) method_missing(sym, *args) </a>
-        
-        
-        
-          <span class="summary_desc">
-Override this method to allow any call to obj.
-
-</span>
-        
-      </li>
-    
-      <li class="public ">
-        <a href="#recipients_list-instance_method" title="- (Array<String>) recipients_list ">- (Array<String>) recipients_list </a>
-        
-        
-        
-          <span class="summary_desc">
-Returns all the recipients in the To field.
-
-</span>
-        
-      </li>
-    
-      <li class="public ">
-        <a href="#respond_to%3F-instance_method" title="- (Boolean) respond_to?(sym) ">- (Boolean) respond_to?(sym) </a>
-        
-        
-        
-          <span class="summary_desc">
-Override this method to verify if a field has been set.
-
-</span>
-        
-      </li>
-    
-      <li class="public ">
-        <a href="#to_s-instance_method" title="- (String) to_s ">- (String) to_s </a>
-        
-        
-        
-          <span class="summary_desc">
-Returns the message in its full form as expected by an SMTP server.
-
-</span>
-        
-      </li>
-    
-      <li class="public ">
-        <a href="#valid%3F-instance_method" title="- (Boolean) valid? ">- (Boolean) valid? </a>
-        
-        
-        
-          <span class="summary_desc">
-Checks if the message is valid.
-
-</span>
-        
-      </li>
-    
-  </ul>
-<div id="constructor_details">
-  <h2>Constructor Details</h2>
-  
-    <div class="method_details">
-  <p class="signature first" id="initialize-instance_method">
-  
-    - (Object) initialize(opts = {}) 
-  
-
-  
-</p><div class="docstring">
-  <div class="discussion">
-      <p>
+</div><div class="section docstring">
+  <p>
 Creates a new message with associated fields.
 </p>
 
-
-  </div>
+</div><div class="section tags">
+  <h2>Meta Tags</h2>
+  <div class="examples">
+  
+    <h3>Example: <small></small></h3>
+    <div class="docstring">
+      <pre class="code">  <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Message</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='symbol'>:to</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>test@example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hi</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre>
+    </div>
+  
 </div>
-<div class="tags">
-    
-    
-    <h3>Example :</h3>
-    <pre class="example code">  <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Message</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='symbol'>:to</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>test@example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hi</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre>
-  
-<h3>Parameters:</h3>
-<ul class="param">
-  
-    <li>
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-        <span class='name'>opts</span>
-      
-      
-      
-        &mdash;
-        
-the options to create a message with.
-
-
-      
-    </li>
-  
-</ul>
+<div class="param">
+  <h3>Parameters:</h3>
+  <dl>
   
     
-    
-    <h3>Options Hash (<tt>opts</tt>):</h3>
-    <ul class="option">
+      <dt>Options Hash <tt>opts</tt></dt>
+<dd>
+  <div class="option">
+    <table>
+      <tr>
+        <th class="name">Key Name</th>
+        <th class="default">Default Value</th>
+        <th class="type">Accepted Types</th>
+        <th class="desc">Description</th>
+      </tr>
       
-        <li>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="name">:from</span>
-          <span class="default">
+        <tr>
+          <td class="name">:from</td>
+          <td class="default">
             
-              &mdash; default:
               <tt>'nobody@localhost'</tt>
             
-          </span>
-          &mdash;
+          </td>
+          <td class="type">[<tt>String</tt>]</td>
+          <td class="desc"><p>
 The email&#8217;s From field
-
-
+</p>
+</td>
         </tr>
       
-        <li>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="name">:subject</span>
-          <span class="default">
+        <tr>
+          <td class="name">:subject</td>
+          <td class="default">
             
-              &mdash; default:
               <tt>''</tt>
             
-          </span>
-          &mdash;
+          </td>
+          <td class="type">[<tt>String</tt>]</td>
+          <td class="desc"><p>
 The email&#8217;s Subject field
-
-
+</p>
+</td>
         </tr>
       
-        <li>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="name">:body</span>
-          <span class="default">
+        <tr>
+          <td class="name">:body</td>
+          <td class="default">
             
-              &mdash; default:
               <tt>''</tt>
             
-          </span>
-          &mdash;
+          </td>
+          <td class="type">[<tt>String</tt>]</td>
+          <td class="desc"><p>
 The email&#8217;s body (not a header)
-
-
+</p>
+</td>
         </tr>
       
-        <li>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="name">:to</span>
-          <span class="default">
+        <tr>
+          <td class="name">:to</td>
+          <td class="default">
             
-              &mdash; default:
               <tt>nil</tt>
             
-          </span>
-          &mdash;
+          </td>
+          <td class="type">[<tt>String</tt>]</td>
+          <td class="desc"><p>
 The email&#8217;s To field. List multiple recipients as &#8216;a@b.c,
 b@c.d&#8217;, not an array.
-
-
+</p>
+</td>
         </tr>
       
-    </ul>
-  
+    </table>
+  </div>
+</dd>
 
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+    
+  
+  </dl>
+</div>
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
 
 
 141
@@ -298,9 +148,9 @@ b@c.d&#8217;, not an array.
 146
 147
 148</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 141</span>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 141</span>
 
 <span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id defaults'>defaults</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -310,51 +160,59 @@ b@c.d&#8217;, not an array.
   <span class='rbrace'>}</span>
   <span class='ivar'>@headers</span> <span class='op'>=</span> <span class='id defaults'>defaults</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='id opts'>opts</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
-  
 </div>
-<div id="method_missing_details">
-  <h2>Dynamic Method Handling</h2>
-  <p class="notice">
+</div><div class="section methodmissing">
+  <h1>Dynamic Method Handling</h1>
+
+  <p class="note">
     This class handles dynamic methods through the <tt>method_missing</tt> method
     
   </p>
-  
-    <div class="method_details">
-  <p class="signature first" id="method_missing-instance_method">
-  
-    - (Object) method_missing(sym, *args) 
-  
 
-  
-</p><div class="docstring">
-  <div class="discussion">
-      <p>
+  <div id="method_missing-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>method_missing</span><span class='args'>(sym, *args)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section docstring">
+  <p>
 Override this method to allow any call to obj.meth or obj.meth= to set a
 header field on this object.
 </p>
 
-
-  </div>
-</div>
-<div class="tags">
-    
-    
-    <h3>Example 
-[To set the field &#8216;X-Message-Id&#8217;]
-
-:</h3>
-    <pre class="example code">  <span class='id m'>m</span><span class='period'>.</span><span class='id x_message_id'>x_message_id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span>
-  <span class='id m'>m</span><span class='period'>.</span><span class='id x_message_id'>x_message_id</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span> <span class='comment'># =&gt; true</span></pre>
+</div><div class="section tags">
+  <h2>Meta Tags</h2>
+  <div class="examples">
   
+    <h3>Example: <small><p>
+[To set the field &#8216;X-Message-Id&#8217;]
+</p>
+</small></h3>
+    <div class="docstring">
+      <pre class="code">  <span class='id m'>m</span><span class='period'>.</span><span class='id x_message_id'>x_message_id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span>
+  <span class='id m'>m</span><span class='period'>.</span><span class='id x_message_id'>x_message_id</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span> <span class='comment'># =&gt; true</span></pre>
+    </div>
+  
+</div>
 
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
 
 
 175
@@ -366,9 +224,9 @@ header field on this object.
 181
 182
 183</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 175</span>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 175</span>
 
 <span class='kw'>def</span> <span class='id method_missing'>method_missing</span><span class='lparen'>(</span><span class='id sym'>sym</span><span class='comma'>,</span> <span class='op'>*</span><span class='id args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id sym'>sym</span><span class='period'>.</span><span class='id to_s'>to_s</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>=$</span><span class='regexp_end'>/</span></span>
@@ -379,361 +237,598 @@ header field on this object.
     <span class='kw'>super</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-  
-</div>
-  <div id="method_details">
-    <h2>Method Details</h2>
-    
-      <div class="method_details">
-  <p class="signature first" id="[]-instance_method">
-  
-    - (String) [](k) 
-  
-
-  
-</p><div class="docstring">
-  <div class="discussion">
-      <p>
-Allow access of fields by header name or symbolic representation
-</p>
-
-
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
-<div class="tags">
-    
-    
-    <h3>Example :</h3>
-    <pre class="example code">  <span class='id m'>m</span><span class='lbracket'>[</span><span class='symbol'>:x_message_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span>
-  <span class='id m'>m</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>X-Message-Id</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span> <span class='comment'># =&gt; true</span></pre>
-  
-<h3>Parameters:</h3>
-<ul class="param">
-  
-    <li>
-      
-        <span class='type'>(<tt>String</tt>, <tt>Symbol</tt>)</span>
-      
-      
-        <span class='name'>k</span>
-      
-      
-      
-        &mdash;
-        
-the header or symbolic header value to lookup.
-
-
-      
-    </li>
-  
-</ul>
-<h3>Returns:</h3>
-<ul class="return">
-  
-    <li>
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-      
-        &mdash;
-        
-the value associated with the field
-
-
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-158</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 158</span>
-
-<span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id k'>k</span><span class='rparen'>)</span>     <span class='ivar'>@headers</span><span class='lbracket'>[</span><span class='id translate_header_to_sym'>translate_header_to_sym</span><span class='lparen'>(</span><span class='id k'>k</span><span class='rparen'>)</span><span class='rbracket'>]</span>     <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
 </div>
-    
-      <div class="method_details">
-  <p class="signature " id="[]=-instance_method">
+</div>  <div class="section visibilitygroup public">
+    <h1>Public Visibility</h1>
+      <div class="section methodsummary instance public">
+    <h1>Public Instance Method Summary</h1>
+<table class="summary">
   
-    - (Object) []=(k, v) 
-  
-
-  
-</p><div class="docstring">
-  <div class="discussion">
-      <p>
-Allow access of fields by header name or symbolic representation
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#%5B%5D-instance_method" title="#[]">#[]</a></span><span class='args'>(k)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        <p>
+Allow access of fields by header name or symbolic representation.
 </p>
 
-
-  </div>
-</div>
-<div class="tags">
-    
-    
-    <h3>Example :</h3>
-    <pre class="example code">  <span class='id m'>m</span><span class='lbracket'>[</span><span class='symbol'>:x_message_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span>
-  <span class='id m'>m</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>X-Message-Id</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span> <span class='comment'># =&gt; true</span></pre>
+        
+          <p class='returns'>
+            Returns: 
+              <span class='return_types'>
+                 <tt>String</tt>
+              </span>
+          </p>
+        
+      </td>
+    </tr>
   
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#%5B%5D%3D-instance_method" title="#[]=">#[]=</a></span><span class='args'>(k, v)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        <p>
+Allow access of fields by header name or symbolic representation.
+</p>
 
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-166</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 166</span>
-
-<span class='kw'>def</span> <span class='op'>[]=</span><span class='lparen'>(</span><span class='id k'>k</span><span class='comma'>,</span> <span class='id v'>v</span><span class='rparen'>)</span> <span class='ivar'>@headers</span><span class='lbracket'>[</span><span class='id translate_header_to_sym'>translate_header_to_sym</span><span class='lparen'>(</span><span class='id k'>k</span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id v'>v</span> <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details">
-  <p class="signature " id="recipients_list-instance_method">
+        
+      </td>
+    </tr>
   
-    - (Array<String>) recipients_list 
-  
-
-  
-</p><div class="docstring">
-  <div class="discussion">
-      <p>
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#recipients_list-instance_method" title="#recipients_list">#recipients_list</a></span><span class='args'></span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        <p>
 Returns all the recipients in the To field.
 </p>
 
+        
+          <p class='returns'>
+            Returns: 
+              <span class='return_types'>
+                 <tt>Array&lt;String></tt>
+              </span>
+          </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#respond_to%3F-instance_method" title="#respond_to?">#respond_to?</a></span><span class='args'>(sym)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        <p>
+Override this method to verify if a field has been set.
+</p>
+
+        
+          <p class='returns'>
+            Returns: 
+              <span class='return_types'>
+                 <tt>Boolean</tt>
+              </span>
+          </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#to_s-instance_method" title="#to_s">#to_s</a></span><span class='args'></span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        <p>
+Returns the message in its full form as expected by an SMTP server.
+</p>
+
+        
+          <p class='returns'>
+            Returns: 
+              <span class='return_types'>
+                 <tt>String</tt>
+              </span>
+          </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#valid%3F-instance_method" title="#valid?">#valid?</a></span><span class='args'></span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        <p>
+Checks if the message is valid.
+</p>
+
+        
+          <p class='returns'>
+            Returns: 
+              <span class='return_types'>
+                 <tt>Boolean</tt>
+              </span>
+          </p>
+        
+      </td>
+    </tr>
+  
+</table>
 
   </div>
+<div class="section methoddetails instance public">
+  <h1>Public Instance Method Details</h1>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>[]</h3>
+</div><div id="[]-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'><tt>String</tt></span>
+      <span class='name'>[]</span><span class='args'>(k)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section docstring">
+  <p>
+Allow access of fields by header name or symbolic representation
+</p>
+
+</div><div class="section tags">
+  <h2>Meta Tags</h2>
+  <div class="examples">
+  
+    <h3>Example: <small></small></h3>
+    <div class="docstring">
+      <pre class="code">  <span class='id m'>m</span><span class='lbracket'>[</span><span class='symbol'>:x_message_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span>
+  <span class='id m'>m</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>X-Message-Id</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span> <span class='comment'># =&gt; true</span></pre>
+    </div>
+  
 </div>
-<div class="tags">
-    
-    
-    <h3>Example :</h3>
-    <pre class="example code">  <span class='id m'>m</span><span class='period'>.</span><span class='id to'>to</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>a@b.c, b@c.d</span><span class='tstring_end'>'</span></span>
-  <span class='id m'>m</span><span class='period'>.</span><span class='id recipients_list'>recipients_list</span> <span class='comment'># =&gt; ['a@b.c', 'b@c.d']</span></pre>
+<div class="param">
+  <h3>Parameters:</h3>
+  <dl>
   
-<h3>Returns:</h3>
-<ul class="return">
-  
-    <li>
-      
-        <span class='type'>(<tt>Array&lt;String></tt>)</span>
-      
-      
-      
-      
-        &mdash;
+    
+      <dt>
+        <span class='type'>[<tt>String</tt>, <tt>Symbol</tt>]</span>
+        <span class='name'>k</span>
         
-the emails in the To field of the message.
-
-
-      
-    </li>
+      </dt>
+      <dd>
+        <span class='desc'><p>
+the header or symbolic header value to lookup.
+</p>
+</span>
+      </dd>
+    
   
-</ul>
+  </dl>
+</div><div class="return">
+  <h3>Returns:</h3>
+  <dl>
+  
+    <dt>
+      
+        <span class='type'>[<tt>String</tt>]</span>
+      
+      
+        <span class='name'></span>
+      
+      
+    </dt>
+    <dd>
+      <span class='desc'><p>
+the value associated with the field
+</p>
+</span>
+    </dd>
+  
+  </dl>
+</div>
 
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+158</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 158</span>
+
+<span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id k'>k</span><span class='rparen'>)</span>     <span class='ivar'>@headers</span><span class='lbracket'>[</span><span class='id translate_header_to_sym'>translate_header_to_sym</span><span class='lparen'>(</span><span class='id k'>k</span><span class='rparen'>)</span><span class='rbracket'>]</span>     <span class='kw'>end</span></pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>[]=</h3>
+</div><div id="[]=-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>[]=</span><span class='args'>(k, v)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section docstring">
+  <p>
+Allow access of fields by header name or symbolic representation
+</p>
+
+</div><div class="section tags">
+  <h2>Meta Tags</h2>
+  <div class="examples">
+  
+    <h3>Example: <small></small></h3>
+    <div class="docstring">
+      <pre class="code">  <span class='id m'>m</span><span class='lbracket'>[</span><span class='symbol'>:x_message_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span>
+  <span class='id m'>m</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>X-Message-Id</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1234</span><span class='tstring_end'>'</span></span> <span class='comment'># =&gt; true</span></pre>
+    </div>
+  
+</div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+166</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 166</span>
+
+<span class='kw'>def</span> <span class='op'>[]=</span><span class='lparen'>(</span><span class='id k'>k</span><span class='comma'>,</span> <span class='id v'>v</span><span class='rparen'>)</span> <span class='ivar'>@headers</span><span class='lbracket'>[</span><span class='id translate_header_to_sym'>translate_header_to_sym</span><span class='lparen'>(</span><span class='id k'>k</span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id v'>v</span> <span class='kw'>end</span></pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>recipients_list</h3>
+</div><div id="recipients_list-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'><tt>Array&lt;String></tt></span>
+      <span class='name'>recipients_list</span><span class='args'></span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section docstring">
+  <p>
+Returns all the recipients in the To field.
+</p>
+
+</div><div class="section tags">
+  <h2>Meta Tags</h2>
+  <div class="examples">
+  
+    <h3>Example: <small></small></h3>
+    <div class="docstring">
+      <pre class="code">  <span class='id m'>m</span><span class='period'>.</span><span class='id to'>to</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>a@b.c, b@c.d</span><span class='tstring_end'>'</span></span>
+  <span class='id m'>m</span><span class='period'>.</span><span class='id recipients_list'>recipients_list</span> <span class='comment'># =&gt; ['a@b.c', 'b@c.d']</span></pre>
+    </div>
+  
+</div>
+<div class="return">
+  <h3>Returns:</h3>
+  <dl>
+  
+    <dt>
+      
+        <span class='type'>[<tt>Array&lt;String></tt>]</span>
+      
+      
+        <span class='name'></span>
+      
+      
+    </dt>
+    <dd>
+      <span class='desc'><p>
+the emails in the To field of the message.
+</p>
+</span>
+    </dd>
+  
+  </dl>
+</div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
 
 
 208
 209
 210</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 208</span>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 208</span>
 
 <span class='kw'>def</span> <span class='id recipients_list'>recipients_list</span>
   <span class='id to'>to</span><span class='period'>.</span><span class='id split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\s*,\s*</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
-    
-      <div class="method_details">
-  <p class="signature " id="respond_to?-instance_method">
+</div>
+    </div>
   
-    - (Boolean) respond_to?(sym) 
-  
+    <div class="method">
+      <div class="method_header">
+  <h3>respond_to?</h3>
+</div><div id="respond_to?-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'><tt>Boolean</tt></span>
+      <span class='name'>respond_to?</span><span class='args'>(sym)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
 
-  
-</p><div class="docstring">
-  <div class="discussion">
-      <p>
+</div><div class="section docstring">
+  <p>
 Override this method to verify if a field has been set.
 </p>
 
-
-  </div>
-</div>
-<div class="tags">
+</div><div class="section tags">
+  <h2>Meta Tags</h2>
+  <div class="return">
   <h3>Returns:</h3>
-<ul class="return">
+  <dl>
   
-    <li>
+    <dt>
       
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
+        <span class='type'>[<tt>Boolean</tt>]</span>
       
       
-        &mdash;
-        
+        <span class='name'></span>
+      
+      
+    </dt>
+    <dd>
+      <span class='desc'><p>
 whether the field was set (or if a regular method is callable.)
-
-
-      
-    </li>
+</p>
+</span>
+    </dd>
   
-</ul>
+  </dl>
+</div>
 
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
 
 
 189
 190
 191
 192</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 189</span>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 189</span>
 
 <span class='kw'>def</span> <span class='id respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='id sym'>sym</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='kw'>super</span>
   <span class='ivar'>@headers</span><span class='period'>.</span><span class='id has_key?'>has_key?</span><span class='lparen'>(</span><span class='id sym'>sym</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
-    
-      <div class="method_details">
-  <p class="signature " id="to_s-instance_method">
+</div>
+    </div>
   
-    - (String) to_s 
-  
+    <div class="method">
+      <div class="method_header">
+  <h3>to_s</h3>
+</div><div id="to_s-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'><tt>String</tt></span>
+      <span class='name'>to_s</span><span class='args'></span>
+      <span class='block'></span>
+    </tt>
+  </div>
 
-  
-</p><div class="docstring">
-  <div class="discussion">
-      <p>
+</div><div class="section docstring">
+  <p>
 Returns the message in its full form as expected by an SMTP server.
 </p>
 
-
-  </div>
-</div>
-<div class="tags">
+</div><div class="section tags">
+  <h2>Meta Tags</h2>
+  <div class="return">
   <h3>Returns:</h3>
-<ul class="return">
+  <dl>
   
-    <li>
+    <dt>
       
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
+        <span class='type'>[<tt>String</tt>]</span>
       
       
-        &mdash;
-        
+        <span class='name'></span>
+      
+      
+    </dt>
+    <dd>
+      <span class='desc'><p>
 the email with headers followed by a body
-
-
-      
-    </li>
+</p>
+</span>
+    </dd>
   
-</ul>
+  </dl>
+</div>
 
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
 
 
 197
 198
 199</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 197</span>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 197</span>
 
 <span class='kw'>def</span> <span class='id to_s'>to_s</span>
   <span class='lbracket'>[</span><span class='id headers'>headers</span><span class='comma'>,</span> <span class='id body'>body</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
-    
-      <div class="method_details">
-  <p class="signature " id="valid?-instance_method">
+</div>
+    </div>
   
-    - (Boolean) valid? 
-  
+    <div class="method">
+      <div class="method_header">
+  <h3>valid?</h3>
+</div><div id="valid?-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'><tt>Boolean</tt></span>
+      <span class='name'>valid?</span><span class='args'></span>
+      <span class='block'></span>
+    </tt>
+  </div>
 
-  
-</p><div class="docstring">
-  <div class="discussion">
-      <p>
+</div><div class="section docstring">
+  <p>
 Checks if the message is valid. Validity is based on having the From, To
 and Subject fields set. From and To must not be empty.
 </p>
 
-
-  </div>
-</div>
-<div class="tags">
+</div><div class="section tags">
+  <h2>Meta Tags</h2>
+  <div class="return">
   <h3>Returns:</h3>
-<ul class="return">
+  <dl>
   
-    <li>
+    <dt>
       
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
+        <span class='type'>[<tt>Boolean</tt>]</span>
       
       
-        &mdash;
-        
+        <span class='name'></span>
+      
+      
+    </dt>
+    <dd>
+      <span class='desc'><p>
 whether or not the message is a valid e-mail
-
-
-      
-    </li>
+</p>
+</span>
+    </dd>
   
-</ul>
+  </dl>
+</div>
 
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
 
 
 217
@@ -743,9 +838,9 @@ whether or not the message is a valid e-mail
 221
 222
 223</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 217</span>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 217</span>
 
 <span class='kw'>def</span> <span class='id valid?'>valid?</span>
   <span class='lbracket'>[</span><span class='symbol'>:from</span><span class='comma'>,</span> <span class='symbol'>:to</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id field'>field</span><span class='op'>|</span>
@@ -754,14 +849,24 @@ whether or not the message is a valid e-mail
   
   <span class='kw'>self</span><span class='lbracket'>[</span><span class='symbol'>:subject</span><span class='rbracket'>]</span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span>
 <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
-    
-    <div id="footer">Powered by yard 0.2.3.5 (ruby-1.9.1)</div>
+</div>
+    </div>
+  
+</div>
+  </div>
+
+</div>
+    </div>
+    <div id="yard_info">
+  Generated on Saturday, November 14 2009 at 06:15:53 PM by 
+  <abbr class="yard" title="Yay! A Ruby Documentation Tool"><a href="http://yard.soen.ca">YARD</a></abbr> 
+  0.2.3.5 (ruby-1.9.1).
+</div>
+
   </body>
 </html>
