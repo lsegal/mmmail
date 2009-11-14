@@ -1,22 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="../style.css" type="text/css" charset="utf-8" />
-<link rel="stylesheet" href="../custom.css" type="text/css" charset="utf-8" />
-<link rel="stylesheet" href="../syntax_highlight.css" type="text/css" charset="utf-8" />
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Class: MmMail::Transport</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-    <script src="../jquery.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../app.js" type="text/javascript" charset="utf-8"></script>
-    <title>Class: MmMail::Transport</title>
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
   </head>
   <body>
-    <div id="content">
-      <div class="section class MmMail_Transport">
-  <h1 class="title">Class: MmMail::Transport</h1>
-  <div class="section docstring">
-  <p>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (T)</a> &raquo; 
+    <a href="../MmMail.html" title="MmMail">MmMail</a>
+     &raquo; 
+    <span class="title">Transport</span>
+  
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: MmMail::Transport 
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/mmmail.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
 Handles the transportation of a <tt><a href="Message.html" title="Message">Message</a></tt> to its destination. Basic support
 for SMTP (through <tt>Net::SMTP</tt>) or <tt>sendmail</tt>.
 </p>
@@ -25,142 +74,268 @@ You can either pass a new <tt><a href="Transport/Config.html" title="Transport::
 use the system wide <tt><a href="#DefaultConfig-constant" title="Transport::DefaultConfig">Transport::DefaultConfig</a></tt> object.
 </p>
 
-</div><div class="section tags">
-  <h2>Meta Tags</h2>
-  <div class="examples">
+
+  </div>
+</div>
+<div class="tags">
   
-    <h3>Examples</h3>
+  <div class="examples">
+    <h3>Examples:</h3>
     
-    <dl>
-      <dt><p>
+      <h4>
 [To set transport to use sendmail]
-</p>
-</dt>
-      <dd class="docstring">
-        <pre class="code">  <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Transport</span><span class='op'>::</span><span class='const'>DefaultConfig</span><span class='period'>.</span><span class='id method'>method</span> <span class='op'>=</span> <span class='symbol'>:sendmail</span>
+
+</h4>
+      <pre class="example code">  <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Transport</span><span class='op'>::</span><span class='const'>DefaultConfig</span><span class='period'>.</span><span class='id method'>method</span> <span class='op'>=</span> <span class='symbol'>:sendmail</span>
   <span class='comment'># Note you might need to point to sendmail if it's not in your PATH:
 </span>  <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Transport</span><span class='op'>::</span><span class='const'>DefaultConfig</span><span class='period'>.</span><span class='id sendmail_binary'>sendmail_binary</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/path/to/sendmail</span><span class='tstring_end'>'</span></span></pre>
-      </dd>
-    </dl>
     
-    <dl>
-      <dt><p>
+      <h4>
 [To connect to your ISP SMTP server on 587]
-</p>
-</dt>
-      <dd class="docstring">
-        <pre class="code">  <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Transport</span><span class='op'>::</span><span class='const'>DefaultConfig</span><span class='period'>.</span><span class='id host'>host</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>smtp.myisp.com</span><span class='tstring_end'>'</span></span>
+
+</h4>
+      <pre class="example code">  <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Transport</span><span class='op'>::</span><span class='const'>DefaultConfig</span><span class='period'>.</span><span class='id host'>host</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>smtp.myisp.com</span><span class='tstring_end'>'</span></span>
   <span class='const'>MmMail</span><span class='op'>::</span><span class='const'>Transport</span><span class='op'>::</span><span class='const'>DefaultConfig</span><span class='period'>.</span><span class='id port'>port</span> <span class='op'>=</span> <span class='int'>587</span></pre>
-      </dd>
-    </dl>
     
-  
-</div>
-<div class="see">
-  <h3>See Also:</h3>
-  <dl>
-    <dt></dt>
-    <dd>
-      <span class='desc'>
-        <tt><a href="Transport/Config.html" title="Transport::Config">Transport::Config</a></tt>, <tt><a href="#mail-class_method" title="Transport::mail">Transport::mail</a></tt>
-      </span>
-    </dd>
-  </dl>
-</div>
-
-</div><div class="section attributes">
-  <h1>Attributes</h1>
-
-  
-    <div class="instance">
-      <h2>Instance Attributes</h2>
-      <table>
-      
-        
-        <tr class="">
-          <th class='signature'>
-            <span class='name'>config</span>
-          </td>
-          <td class="readwrite">
-            [<span id='config-instance_method'>R</span><span id='config=-instance_method'>W</span>] 
-          </td>
-          <td class="visibility">
-            public
-          </td>
-          <td class="docstring">
-            <p>
-Sets a <tt><a href="Transport/Config.html" title="Config">Config</a></tt> object to use when sending mail.
-</p>
-
-            
-          </td>
-        </tr>
-        
-      
-      </table>
-    </div>
-  
-</div>
-<div class="section constants">
-  <div class="thisclass">
-  <h1>Constants</h1>
-  <dl>
-    
-      <dt id="DefaultConfig-constant">DefaultConfig</dt>
-      <dd>Config.new</dd>
-    
-  </dl>
-</div>
-
-</div><div class="section constructor">
-<h1>Constructor Summary</h1>
-  <div id="initialize-instance_method" class="section method">
-  <div class="details_title">
-    <div class='section methodsignature'>
-    <tt class='def'>
-      <span class='visibility'>public</span>
-      <span class='return_types'></span>
-      <span class='name'>initialize</span><span class='args'>(config = nil)</span>
-      <span class='block'></span>
-    </tt>
   </div>
 
-</div><div class="section docstring">
-  <p>
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><a href="Transport/Config.html" title="Transport::Config">Transport::Config</a></li>
+    
+      <li><a href="#mail-class_method" title="Transport::mail">Transport::mail</a></li>
+    
+  </ul>
+
+</div>
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="DefaultConfig-constant ">DefaultConfig =
+            <span class="summary_desc">
+The default system wide configuration used when no custom config object is
+provided to a Transport object.
+
+</span>
+        </dt>
+        <dd><pre class="code"><span class='const'>Config</span><span class='period'>.</span><span class='id new'>new</span></pre></dd>
+      
+    </dl>
+  
+
+
+  <h2>Attribute Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#config-instance_method" title="#config (instance method)">- (Object) <strong>config</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Sets a <tt><a href="Transport/Config.html" title="Config">Config</a></tt> object to use when sending mail.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+
+  <h2>Method Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#mail-class_method" title="mail (class method)">+ (Object) <strong>mail</strong>(message, config = nil) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Creates a new <tt><a href="" title="Transport">Transport</a></tt> object and sends an email.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#initialize-instance_method" title="#initialize (instance method)">- (Transport) <strong>initialize</strong>(config = nil) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Creates a new Transport object to send emails with.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#mail-instance_method" title="#mail (instance method)">- (Object) <strong>mail</strong>(message) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Sends a <tt><a href="Message.html" title="Message">Message</a></tt> object out as an email using the configuration set during
+initialization.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#mail_sendmail-instance_method" title="#mail_sendmail (instance method)">- (Object) <strong>mail_sendmail</strong>(message) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Sends a mail through sendmail using the <tt><a href="Transport/Config.html#sendmail_binary-instance_method" title="Config#sendmail_binary">Config#sendmail_binary</a></tt> as the
+location of the file.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#mail_smtp-instance_method" title="#mail_smtp (instance method)">- (Object) <strong>mail_smtp</strong>(message) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Sends a mail through Net::SMTP using the <tt><a href="#config-instance_method" title="#config">#config</a></tt> if any SMTP or hostname
+information is set.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+<div id="constructor_details">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><a href="" title="Transport">Transport</a></tt>) <strong>initialize</strong>(config = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
 Creates a new Transport object to send emails with. To change settings to
 sendmail or use SMTP auth, set these in the <tt><a href="Transport/Config.html" title="Config">Config</a></tt> object.
 </p>
 
-</div><div class="section tags">
-  <h2>Meta Tags</h2>
-  <div class="raise">
-  <h3>Raises:</h3>
-  <dl>
-  
-    <dt>
-      
-        <span class='type'>[<tt>ArgumentError</tt>]</span>
-      
-      
-      
-    </dt>
-    <dd>
-      <span class='desc'><p>
-if config is not a <tt><a href="Transport/Config.html" title="Config">Config</a></tt> object.
-</p>
-</span>
-    </dd>
-  
-  </dl>
-</div>
 
-</div><div class="section source">
-  <span>[<a class="source_link" href="#">View source</a>]</span>
-  <div class="source_code">
-    <table>
-      <tr>
-        <td>
-          <pre class="lines">
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt><a href="Transport/Config.html" title="Config">Config</a></tt>)</span>
+      
+      
+        <span class='name'>a</span>
+      
+      
+      
+        &mdash;
+        
+configuration to use
+
+
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt><a href="" title="Transport">Transport</a></tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        
+a new instance of <tt>Transport</tt>
+
+
+      
+    </li>
+  
+</ul>
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        
+if config is not a <tt><a href="Transport/Config.html" title="Config">Config</a></tt> object.
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
 
 76
@@ -170,9 +345,9 @@ if config is not a <tt><a href="Transport/Config.html" title="Config">Config</a>
 80
 81
 82</pre>
-        </td>
-        <td>
-          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 76</span>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id config'>config</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id config'>config</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id config'>config</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Config</span><span class='rparen'>)</span>
@@ -181,253 +356,188 @@ if config is not a <tt><a href="Transport/Config.html" title="Config">Config</a>
   
   <span class='ivar'>@config</span> <span class='op'>=</span> <span class='id config'>config</span> <span class='op'>||</span> <span class='const'>DefaultConfig</span>
 <span class='kw'>end</span></pre>
-        </td>
-      </tr>
-    </table>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="attr_details">
+    <h2>Attribute Details</h2>
+    
+      
+      <span id="config=-instance_method"></span>
+      <span id="config-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="config-instance_method">
+  
+    - (<tt>Object</tt>) <strong>config</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Sets a <tt><a href="Transport/Config.html" title="Config">Config</a></tt> object to use when sending mail
+</p>
+
+
   </div>
 </div>
-</div>
-</div>  <div class="section visibilitygroup public">
-    <h1>Public Visibility</h1>
-      <div class="section methodsummary class public">
-    <h1>Public Class Method Summary</h1>
-<table class="summary">
+<div class="tags">
   
-    <tr>
-      <th class="signature">
-        
-          <span class='overload'>
-            <span class='name'><a href="#mail-class_method" title="mail">mail</a></span><span class='args'>(message, config = nil)</span>
-            <span class='block'></span>
-          </span>
-        
-        
-      </th>
-      <td class="docstring">
-        <p>
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 68</span>
+
+<span class='kw'>def</span> <span class='id config'>config</span>
+  <span class='ivar'>@config</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="method_details">
+    <h2>Method Details</h2>
+    
+      <div class="method_details first">
+  <p class="signature first" id="mail-class_method">
+  
+    + (<tt>Object</tt>) <strong>mail</strong>(message, config = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
 Creates a new <tt><a href="" title="Transport">Transport</a></tt> object and sends an email.
 </p>
 
-        
-      </td>
-    </tr>
-  
-</table>
 
   </div>
-  <div class="section methodsummary instance public">
-    <h1>Public Instance Method Summary</h1>
-<table class="summary">
+</div>
+<div class="tags">
   
-    <tr>
-      <th class="signature">
-        
-          <span class='overload'>
-            <span class='name'><a href="#mail-instance_method" title="#mail">#mail</a></span><span class='args'>(message)</span>
-            <span class='block'></span>
-          </span>
-        
-        
-      </th>
-      <td class="docstring">
-        <p>
-Sends a <tt><a href="Message.html" title="Message">Message</a></tt> object out as an email using the configuration.
-</p>
-
-        
-      </td>
-    </tr>
-  
-    <tr>
-      <th class="signature">
-        
-          <span class='overload'>
-            <span class='name'><a href="#mail_sendmail-instance_method" title="#mail_sendmail">#mail_sendmail</a></span><span class='args'>(message)</span>
-            <span class='block'></span>
-          </span>
-        
-        
-      </th>
-      <td class="docstring">
-        <p>
-Sends a mail through sendmail using the <tt><a href="Transport/Config.html#sendmail_binary-instance_method" title="Config#sendmail_binary">Config#sendmail_binary</a></tt> as the.
-</p>
-
-        
-      </td>
-    </tr>
-  
-    <tr>
-      <th class="signature">
-        
-          <span class='overload'>
-            <span class='name'><a href="#mail_smtp-instance_method" title="#mail_smtp">#mail_smtp</a></span><span class='args'>(message)</span>
-            <span class='block'></span>
-          </span>
-        
-        
-      </th>
-      <td class="docstring">
-        <p>
-Sends a mail through Net::SMTP using the <tt><a href="#config-instance_method" title="#config">#config</a></tt> if.
-</p>
-
-        
-      </td>
-    </tr>
-  
-</table>
-
-  </div>
-<div class="section methoddetails class public">
-  <h1>Public Class Method Details</h1>
-  
-    <div class="method">
-      <div class="method_header">
-  <h3>mail</h3>
-</div><div id="mail-class_method" class="section method">
-  <div class="details_title">
-    <div class='section methodsignature'>
-    <tt class='def'>
-      <span class='visibility'>public</span>
-      <span class='return_types'></span>
-      <span class='name'>mail</span><span class='args'>(message, config = nil)</span>
-      <span class='block'></span>
-    </tt>
-  </div>
-
-</div><div class="section docstring">
-  <p>
-Creates a new <tt><a href="" title="Transport">Transport</a></tt> object and sends an email.
-</p>
-
-</div><div class="section tags">
-  <h2>Meta Tags</h2>
-  <div class="see">
   <h3>See Also:</h3>
-  <dl>
-    <dt></dt>
-    <dd>
-      <span class='desc'>
-        <tt><a href="#mail-instance_method" title="#mail">#mail</a></tt>
-      </span>
-    </dd>
-  </dl>
-</div>
+  <ul class="see">
+    
+      <li><a href="#mail-instance_method" title="#mail">#mail</a></li>
+    
+  </ul>
 
-</div><div class="section source">
-  <span>[<a class="source_link" href="#">View source</a>]</span>
-  <div class="source_code">
-    <table>
-      <tr>
-        <td>
-          <pre class="lines">
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
 
 63
 64
 65</pre>
-        </td>
-        <td>
-          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 63</span>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id mail'>mail</span><span class='lparen'>(</span><span class='id message'>message</span><span class='comma'>,</span> <span class='id config'>config</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id new'>new</span><span class='lparen'>(</span><span class='id config'>config</span><span class='rparen'>)</span><span class='period'>.</span><span class='id mail'>mail</span><span class='lparen'>(</span><span class='id message'>message</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
-        </td>
-      </tr>
-    </table>
-  </div>
+    </td>
+  </tr>
+</table>
 </div>
-</div>
-    </div>
+    
+      <div class="method_details ">
+  <p class="signature " id="mail-instance_method">
   
-</div><div class="section methoddetails instance public">
-  <h1>Public Instance Method Details</h1>
+    - (<tt>Object</tt>) <strong>mail</strong>(message) 
   
-    <div class="method">
-      <div class="method_header">
-  <h3>mail</h3>
-</div><div id="mail-instance_method" class="section method">
-  <div class="details_title">
-    <div class='section methodsignature'>
-    <tt class='def'>
-      <span class='visibility'>public</span>
-      <span class='return_types'></span>
-      <span class='name'>mail</span><span class='args'>(message)</span>
-      <span class='block'></span>
-    </tt>
-  </div>
 
-</div><div class="section docstring">
-  <p>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
 Sends a <tt><a href="Message.html" title="Message">Message</a></tt> object out as an email using the configuration set during
 initialization.
 </p>
 
-</div><div class="section tags">
-  <h2>Meta Tags</h2>
-  <div class="param">
-  <h3>Parameters:</h3>
-  <dl>
-  
-    
-      <dt>
-        <span class='type'>[<tt><a href="Message.html" title="Message">Message</a></tt>]</span>
-        <span class='name'>message</span>
-        
-      </dt>
-      <dd>
-        <span class='desc'><p>
-an email to send
-</p>
-</span>
-      </dd>
-    
-  
-  </dl>
-</div><div class="raise">
-  <h3>Raises:</h3>
-  <dl>
-  
-    <dt>
-      
-        <span class='type'>[<tt>ArgumentError</tt>]</span>
-      
-      
-      
-    </dt>
-    <dd>
-      <span class='desc'><p>
-if message is not a <tt><a href="Message.html" title="Message">Message</a></tt> object
-</p>
-</span>
-    </dd>
-  
-    <dt>
-      
-        <span class='type'>[<tt><a href="TransportError.html" title="TransportError">TransportError</a></tt>]</span>
-      
-      
-      
-    </dt>
-    <dd>
-      <span class='desc'><p>
-if message is not <tt><a href="Message.html#valid%3F-instance_method" title="valid">valid</a></tt>.
-</p>
-</span>
-    </dd>
-  
-  </dl>
-</div>
 
-</div><div class="section source">
-  <span>[<a class="source_link" href="#">View source</a>]</span>
-  <div class="source_code">
-    <table>
-      <tr>
-        <td>
-          <pre class="lines">
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt><a href="Message.html" title="Message">Message</a></tt>)</span>
+      
+      
+        <span class='name'>message</span>
+      
+      
+      
+        &mdash;
+        
+an email to send
+
+
+      
+    </li>
+  
+</ul>
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        
+if message is not a <tt><a href="Message.html" title="Message">Message</a></tt> object
+
+
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt><a href="TransportError.html" title="TransportError">TransportError</a></tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        
+if message is not <tt><a href="Message.html#valid%3F-instance_method" title="valid">valid</a></tt>.
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
 
 90
@@ -439,9 +549,9 @@ if message is not <tt><a href="Message.html#valid%3F-instance_method" title="val
 96
 97
 98</pre>
-        </td>
-        <td>
-          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 90</span>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id mail'>mail</span><span class='lparen'>(</span><span class='id message'>message</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='const'>Message</span> <span class='op'>===</span> <span class='id message'>message</span>
@@ -452,83 +562,74 @@ if message is not <tt><a href="Message.html#valid%3F-instance_method" title="val
   
   <span class='id send'>send</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>mail_</span><span class='embexpr_beg'>#{</span><span class='id config'>config</span><span class='period'>.</span><span class='id method'>method</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id message'>message</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
-        </td>
-      </tr>
-    </table>
-  </div>
+    </td>
+  </tr>
+</table>
 </div>
-</div>
-    </div>
+    
+      <div class="method_details ">
+  <p class="signature " id="mail_sendmail-instance_method">
   
-    <div class="method">
-      <div class="method_header">
-  <h3>mail_sendmail</h3>
-</div><div id="mail_sendmail-instance_method" class="section method">
-  <div class="details_title">
-    <div class='section methodsignature'>
-    <tt class='def'>
-      <span class='visibility'>public</span>
-      <span class='return_types'></span>
-      <span class='name'>mail_sendmail</span><span class='args'>(message)</span>
-      <span class='block'></span>
-    </tt>
-  </div>
+    - (<tt>Object</tt>) <strong>mail_sendmail</strong>(message) 
+  
 
-</div><div class="section docstring">
-  <p>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
 Sends a mail through sendmail using the <tt><a href="Transport/Config.html#sendmail_binary-instance_method" title="Config#sendmail_binary">Config#sendmail_binary</a></tt> as the
 location of the file.
 </p>
 
-</div><div class="section tags">
-  <h2>Meta Tags</h2>
-  <div class="param">
-  <h3>Parameters:</h3>
-  <dl>
-  
-    
-      <dt>
-        <span class='type'>[<tt>#to_s</tt>]</span>
-        <span class='name'>message</span>
-        
-      </dt>
-      <dd>
-        <span class='desc'><p>
-the message to send
-</p>
-</span>
-      </dd>
-    
-  
-  </dl>
-</div><div class="raise">
-  <h3>Raises:</h3>
-  <dl>
-  
-    <dt>
-      
-        <span class='type'>[<tt><a href="TransportError.html" title="TransportError">TransportError</a></tt>]</span>
-      
-      
-      
-    </dt>
-    <dd>
-      <span class='desc'><p>
-if a problem during execution occured
-</p>
-</span>
-    </dd>
-  
-  </dl>
-</div>
 
-</div><div class="section source">
-  <span>[<a class="source_link" href="#">View source</a>]</span>
-  <div class="source_code">
-    <table>
-      <tr>
-        <td>
-          <pre class="lines">
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>#to_s</tt>)</span>
+      
+      
+        <span class='name'>message</span>
+      
+      
+      
+        &mdash;
+        
+the message to send
+
+
+      
+    </li>
+  
+</ul>
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+        <span class='type'>(<tt><a href="TransportError.html" title="TransportError">TransportError</a></tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        
+if a problem during execution occured
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
 
 116
@@ -541,9 +642,9 @@ if a problem during execution occured
 123
 124
 125</pre>
-        </td>
-        <td>
-          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 116</span>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 116</span>
 
 <span class='kw'>def</span> <span class='id mail_sendmail'>mail_sendmail</span><span class='lparen'>(</span><span class='id message'>message</span><span class='rparen'>)</span>
   <span class='id bin'>bin</span><span class='comma'>,</span> <span class='id err'>err</span> <span class='op'>=</span> <span class='id config'>config</span><span class='period'>.</span><span class='id sendmail_binary'>sendmail_binary</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
@@ -555,63 +656,55 @@ if a problem during execution occured
   
   <span class='id raise'>raise</span> <span class='const'>TransportError</span><span class='comma'>,</span> <span class='id err'>err</span> <span class='kw'>if</span> <span class='gvar'>$?</span> <span class='op'>!=</span> <span class='int'>0</span>
 <span class='kw'>end</span></pre>
-        </td>
-      </tr>
-    </table>
-  </div>
+    </td>
+  </tr>
+</table>
 </div>
-</div>
-    </div>
+    
+      <div class="method_details ">
+  <p class="signature " id="mail_smtp-instance_method">
   
-    <div class="method">
-      <div class="method_header">
-  <h3>mail_smtp</h3>
-</div><div id="mail_smtp-instance_method" class="section method">
-  <div class="details_title">
-    <div class='section methodsignature'>
-    <tt class='def'>
-      <span class='visibility'>public</span>
-      <span class='return_types'></span>
-      <span class='name'>mail_smtp</span><span class='args'>(message)</span>
-      <span class='block'></span>
-    </tt>
-  </div>
+    - (<tt>Object</tt>) <strong>mail_smtp</strong>(message) 
+  
 
-</div><div class="section docstring">
-  <p>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
 Sends a mail through Net::SMTP using the <tt><a href="#config-instance_method" title="#config">#config</a></tt> if any SMTP or hostname
 information is set.
 </p>
 
-</div><div class="section tags">
-  <h2>Meta Tags</h2>
-  <div class="param">
-  <h3>Parameters:</h3>
-  <dl>
-  
-    
-      <dt>
-        <span class='type'>[<tt>#to_s</tt>]</span>
-        <span class='name'>message</span>
-        
-      </dt>
-      <dd>
-        <span class='desc'><p>
-the message to send
-</p>
-</span>
-      </dd>
-    
-  
-  </dl>
+
+  </div>
 </div>
-</div><div class="section source">
-  <span>[<a class="source_link" href="#">View source</a>]</span>
-  <div class="source_code">
-    <table>
-      <tr>
-        <td>
-          <pre class="lines">
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>#to_s</tt>)</span>
+      
+      
+        <span class='name'>message</span>
+      
+      
+      
+        &mdash;
+        
+the message to send
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
 
 104
@@ -620,9 +713,9 @@ the message to send
 107
 108
 109</pre>
-        </td>
-        <td>
-          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 104</span>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 104</span>
 
 <span class='kw'>def</span> <span class='id mail_smtp'>mail_smtp</span><span class='lparen'>(</span><span class='id message'>message</span><span class='rparen'>)</span>
   <span class='const'>Net</span><span class='op'>::</span><span class='const'>SMTP</span><span class='period'>.</span><span class='id start'>start</span><span class='lparen'>(</span><span class='id config'>config</span><span class='period'>.</span><span class='id host'>host</span><span class='comma'>,</span> <span class='id config'>config</span><span class='period'>.</span><span class='id port'>port</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>localhost.localdomain</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> 
@@ -630,23 +723,19 @@ the message to send
     <span class='id smtp'>smtp</span><span class='period'>.</span><span class='id send_message'>send_message</span><span class='lparen'>(</span><span class='id message'>message</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='comma'>,</span> <span class='id message'>message</span><span class='period'>.</span><span class='id from'>from</span><span class='comma'>,</span> <span class='id message'>message</span><span class='period'>.</span><span class='id recipients_list'>recipients_list</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
-        </td>
-      </tr>
-    </table>
-  </div>
+    </td>
+  </tr>
+</table>
 </div>
-</div>
-    </div>
-  
-</div>
+    
   </div>
 
 </div>
-    </div>
-    <div id="yard_info">
-  Generated on Saturday, November 14 2009 at 06:15:53 PM by 
-  <abbr class="yard" title="Yay! A Ruby Documentation Tool"><a href="http://yard.soen.ca">YARD</a></abbr> 
-  0.2.3.5 (ruby-1.9.1).
+    
+    <div id="footer">
+  Generated on Sat Nov 14 18:26:25 2009 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.4.0 (ruby-1.9.1).
 </div>
 
   </body>

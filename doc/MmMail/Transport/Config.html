@@ -1,213 +1,304 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="../../style.css" type="text/css" charset="utf-8" />
-<link rel="stylesheet" href="../../custom.css" type="text/css" charset="utf-8" />
-<link rel="stylesheet" href="../../syntax_highlight.css" type="text/css" charset="utf-8" />
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Class: MmMail::Transport::Config</title>
+<link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-    <script src="../../jquery.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../../app.js" type="text/javascript" charset="utf-8"></script>
-    <title>Class: MmMail::Transport::Config</title>
+<script type="text/javascript" charset="utf-8">
+  relpath = '../..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
   </head>
   <body>
-    <div id="content">
-      <div class="section class MmMail_Transport_Config">
-  <h1 class="title">Class: MmMail::Transport::Config</h1>
-  <div class="section docstring">
-  <p>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (C)</a> &raquo; 
+    <a href="../../MmMail.html" title="MmMail">MmMail</a> &raquo; <a href="../Transport.html" title="Transport">Transport</a>
+     &raquo; 
+    <span class="title">Config</span>
+  
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: MmMail::Transport::Config 
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/mmmail.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
 Configuration class for a <tt><a href="../Transport.html" title="Transport">Transport</a></tt>
 </p>
 
-</div><div class="section attributes">
-  <h1>Attributes</h1>
 
-  
-    <div class="instance">
-      <h2>Instance Attributes</h2>
-      <table>
-      
-        
-        <tr class="">
-          <th class='signature'>
-            <span class='name'>auth_pass</span>
-          </td>
-          <td class="readwrite">
-            [<span id='auth_pass-instance_method'>R</span><span id='auth_pass=-instance_method'>W</span>] 
-          </td>
-          <td class="visibility">
-            public
-          </td>
-          <td class="docstring">
-            <p>
-Set/get the AUTH user/password when using SMTP transport.
-</p>
-
-            
-          </td>
-        </tr>
-        
-      
-        
-        <tr class="">
-          <th class='signature'>
-            <span class='name'>auth_type</span>
-          </td>
-          <td class="readwrite">
-            [<span id='auth_type-instance_method'>R</span><span id='auth_type=-instance_method'>W</span>] 
-          </td>
-          <td class="visibility">
-            public
-          </td>
-          <td class="docstring">
-            <p>
-Set/get the authentication type (nil for none, :plain, :login or
-:cram_md5).
-</p>
-
-            
-          </td>
-        </tr>
-        
-      
-        
-        <tr class="">
-          <th class='signature'>
-            <span class='name'>auth_user</span>
-          </td>
-          <td class="readwrite">
-            [<span id='auth_user-instance_method'>R</span><span id='auth_user=-instance_method'>W</span>] 
-          </td>
-          <td class="visibility">
-            public
-          </td>
-          <td class="docstring">
-            <p>
-Set/get the AUTH user/password when using SMTP transport.
-</p>
-
-            
-          </td>
-        </tr>
-        
-      
-        
-        <tr class="">
-          <th class='signature'>
-            <span class='name'>host</span>
-          </td>
-          <td class="readwrite">
-            [<span id='host-instance_method'>R</span><span id='host=-instance_method'>W</span>] 
-          </td>
-          <td class="visibility">
-            public
-          </td>
-          <td class="docstring">
-            <p>
-Set/get the SMTP host/port information.
-</p>
-
-            
-          </td>
-        </tr>
-        
-      
-        
-        <tr class="">
-          <th class='signature'>
-            <span class='name'>method</span>
-          </td>
-          <td class="readwrite">
-            [<span id='method-instance_method'>R</span><span id='method=-instance_method'>W</span>] 
-          </td>
-          <td class="visibility">
-            public
-          </td>
-          <td class="docstring">
-            <p>
-Set/get the email method.
-</p>
-
-            
-          </td>
-        </tr>
-        
-      
-        
-        <tr class="">
-          <th class='signature'>
-            <span class='name'>port</span>
-          </td>
-          <td class="readwrite">
-            [<span id='port-instance_method'>R</span><span id='port=-instance_method'>W</span>] 
-          </td>
-          <td class="visibility">
-            public
-          </td>
-          <td class="docstring">
-            <p>
-Set/get the SMTP host/port information.
-</p>
-
-            
-          </td>
-        </tr>
-        
-      
-        
-        <tr class="">
-          <th class='signature'>
-            <span class='name'>sendmail_binary</span>
-          </td>
-          <td class="readwrite">
-            [<span id='sendmail_binary-instance_method'>R</span><span id='sendmail_binary=-instance_method'>W</span>] 
-          </td>
-          <td class="visibility">
-            public
-          </td>
-          <td class="docstring">
-            <p>
-Set/get the location of the sendmail binary on the system.
-</p>
-
-            
-          </td>
-        </tr>
-        
-      
-      </table>
-    </div>
+  </div>
+</div>
+<div class="tags">
   
 </div>
-<div class="section constants">
-  
-</div><div class="section constructor">
-<h1>Constructor Summary</h1>
-  <div id="initialize-instance_method" class="section method">
-  <div class="details_title">
-    <div class='section methodsignature'>
-    <tt class='def'>
-      <span class='visibility'>public</span>
-      <span class='return_types'></span>
-      <span class='name'>initialize</span><span class='args'></span>
-      <span class='block'></span>
-    </tt>
-  </div>
 
-</div><div class="section docstring">
-  <p>
+  <h2>Attribute Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#auth_pass-instance_method" title="#auth_pass (instance method)">- (Object) <strong>auth_pass</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Set/get the AUTH user/password when using SMTP transport.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#auth_type-instance_method" title="#auth_type (instance method)">- (Object) <strong>auth_type</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Set/get the authentication type (nil for none, :plain, :login or
+:cram_md5).
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#auth_user-instance_method" title="#auth_user (instance method)">- (Object) <strong>auth_user</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Set/get the AUTH user/password when using SMTP transport.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#host-instance_method" title="#host (instance method)">- (Object) <strong>host</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Set/get the SMTP host/port information.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#method-instance_method" title="#method (instance method)">- (Object) <strong>method</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Set/get the email method.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#port-instance_method" title="#port (instance method)">- (Object) <strong>port</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Set/get the SMTP host/port information.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#sendmail_binary-instance_method" title="#sendmail_binary (instance method)">- (Object) <strong>sendmail_binary</strong> </a>
+  
+  </span>
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Set/get the location of the sendmail binary on the system.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+
+  <h2>Method Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature"><a href="#initialize-instance_method" title="#initialize (instance method)">- (Config) <strong>initialize</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Creates a new Config object set to send via SMTP on localhost:25 with no
+authentication.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+<div id="constructor_details">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><a href="" title="Config">Config</a></tt>) <strong>initialize</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
 Creates a new Config object set to send via SMTP on localhost:25 with no
 authentication.
 </p>
 
-</div><div class="section source">
-  <span>[<a class="source_link" href="#">View source</a>]</span>
-  <div class="source_code">
-    <table>
-      <tr>
-        <td>
-          <pre class="lines">
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt><a href="" title="Config">Config</a></tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        
+a new instance of <tt>Config</tt>
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
 
 
 44
@@ -219,9 +310,9 @@ authentication.
 50
 51
 52</pre>
-        </td>
-        <td>
-          <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 44</span>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id initialize'>initialize</span>
   <span class='ivar'>@method</span> <span class='op'>=</span> <span class='symbol'>:smtp</span> <span class='comment'># :sendmail
@@ -232,19 +323,320 @@ authentication.
   <span class='ivar'>@auth_pass</span> <span class='op'>=</span> <span class='kw'>nil</span>
   <span class='ivar'>@sendmail_binary</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sendmail</span><span class='tstring_end'>'</span></span>
 <span class='kw'>end</span></pre>
-        </td>
-      </tr>
-    </table>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="attr_details">
+    <h2>Attribute Details</h2>
+    
+      
+      <span id="auth_pass=-instance_method"></span>
+      <span id="auth_pass-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="auth_pass-instance_method">
+  
+    - (<tt>Object</tt>) <strong>auth_pass</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set/get the AUTH user/password when using SMTP transport.
+</p>
+
+
   </div>
 </div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 34</span>
+
+<span class='kw'>def</span> <span class='id auth_pass'>auth_pass</span>
+  <span class='ivar'>@auth_pass</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
 </div>
+    
+      
+      <span id="auth_type=-instance_method"></span>
+      <span id="auth_type-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="auth_type-instance_method">
+  
+    - (<tt>Object</tt>) <strong>auth_type</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set/get the authentication type (nil for none, :plain, :login or :cram_md5)
+</p>
+
+
+  </div>
 </div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id auth_type'>auth_type</span>
+  <span class='ivar'>@auth_type</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
 </div>
-    </div>
-    <div id="yard_info">
-  Generated on Saturday, November 14 2009 at 06:15:53 PM by 
-  <abbr class="yard" title="Yay! A Ruby Documentation Tool"><a href="http://yard.soen.ca">YARD</a></abbr> 
-  0.2.3.5 (ruby-1.9.1).
+    
+      
+      <span id="auth_user=-instance_method"></span>
+      <span id="auth_user-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="auth_user-instance_method">
+  
+    - (<tt>Object</tt>) <strong>auth_user</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set/get the AUTH user/password when using SMTP transport.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 34</span>
+
+<span class='kw'>def</span> <span class='id auth_user'>auth_user</span>
+  <span class='ivar'>@auth_user</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="host=-instance_method"></span>
+      <span id="host-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="host-instance_method">
+  
+    - (<tt>Object</tt>) <strong>host</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set/get the SMTP host/port information
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 28</span>
+
+<span class='kw'>def</span> <span class='id host'>host</span>
+  <span class='ivar'>@host</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="method=-instance_method"></span>
+      <span id="method-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="method-instance_method">
+  
+    - (<tt>Object</tt>) <strong>method</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set/get the email method. Allowed values are <tt>:smtp</tt> or
+<tt>:sendmail</tt>.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id method'>method</span>
+  <span class='ivar'>@method</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="port=-instance_method"></span>
+      <span id="port-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="port-instance_method">
+  
+    - (<tt>Object</tt>) <strong>port</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set/get the SMTP host/port information
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 28</span>
+
+<span class='kw'>def</span> <span class='id port'>port</span>
+  <span class='ivar'>@port</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="sendmail_binary=-instance_method"></span>
+      <span id="sendmail_binary-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="sendmail_binary-instance_method">
+  
+    - (<tt>Object</tt>) <strong>sendmail_binary</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set/get the location of the sendmail binary on the system
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/mmmail.rb', line 40</span>
+
+<span class='kw'>def</span> <span class='id sendmail_binary'>sendmail_binary</span>
+  <span class='ivar'>@sendmail_binary</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+</div>
+    
+    <div id="footer">
+  Generated on Sat Nov 14 18:26:26 2009 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.4.0 (ruby-1.9.1).
 </div>
 
   </body>
