@@ -41,4 +41,3 @@ begin
 YARD::Rake::YardocTask.new
 rescue LoadError; end
 
-
